@@ -9,7 +9,6 @@ local event = require("Event")
 local number = require("Number")
 local internet = require("Internet")
 local keyboard = require("Keyboard")
-local unicode = require("Unicode")
 ---------------------------------------------------------------------------------
 local reactor
 
