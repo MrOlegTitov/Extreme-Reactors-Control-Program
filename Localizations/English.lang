@@ -1,6 +1,12 @@
 {
 	greeting = "Welcome, ",
 	noReactor = "This program needs a connected reactor from Extreme Reactors or Big Reactors! Press any key to exit.",
+	menuPTT = "Program",
+	menuCTT = "Control",
+	menuCLS = "Close program",
+	menuSRS = "Switch reactor state",
+	menuERF = "Extract fuel",
+	menuERW = "Extract waste",
 	helloTT = "Home",
 	infoTT = "Sensor indicators",
 	infoFT = "Core temperature (C): ",

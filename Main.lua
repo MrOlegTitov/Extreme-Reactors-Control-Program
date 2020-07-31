@@ -19,11 +19,41 @@ if component.isAvailable("br_reactor") then
   reactor = component.get("br_reactor")
 else
   GUI.alert(l.noReactor)
-  os.exit()
+  window:remove()
+  menu:remove()
 end
 
 local workspace, window = system.addWindow(GUI.filledWindow(1, 1, 118, 31, 0xE1E1E1))
+
+local menu = workspace:addChild(GUI.menu(1, 1, workspace.width, 0xEEEEEE, 0x666666, 0x3366CC, 0xFFFFFF))
+local FileM = menu:addContextMenuItem(l.menuPTT)
+FileM:addItem(l.menuCLS).onTouch = function()
+  window:remove()
+  menu:remove()
+end
+local CtrlM = menu:addContextMenuItem(l.menuCTT)
+CtrlM:addItem(l.menuERF).onTouch = function()
+  reactor.doEjectFuel()
+  GUI.alert(l.ctrlFS)
+end
+CtrlM:addItem(l.menuERW).onTouch = function()
+  reactor.doEjectWaste()
+  GUI.alert(l.ctrlWS)
+end
+CtrlM:addItem(l.menuSRS).onTouch = function()
+  if reactor.getActive() == true then
+    reactor.setActive(false)
+  else
+    reactor.setActive(true)
+  end
+end
+
 window.showDesktopOnMaximize = true
+
+window.actionButtons.close.onTouch = function()
+  window:remove()
+  menu:remove()
+end
  
 local list = window:addChild(GUI.list(1, 4, 22, 1, 3, 0, 0x4B4B4B, 0xE1E1E1, 0x4B4B4B, 0xE1E1E1, 0xE1E1E1, 0x3C3C3C))
 local listCover = window:addChild(GUI.panel(1, 1, list.width, 3, 0x4B4B4B))
@@ -34,7 +64,7 @@ local layout = window:addChild(GUI.layout(list.width + 1, 1, 1, 1, 1, 1))
 window.backgroundPanel.localX = lx
  
 function n2s(num)
-  return 0.01*math.floor(100*num)
+  return number.roundToDecimalPlaces(num, 3)
 end
  
 local function addTab(text, func)
@@ -104,7 +134,7 @@ addTab(l.infoTT, function()
     else
       infoRA.text = l.infoRA .. l.infoRF
     end
-  end, 0.5)
+  end, 0.15)
 end)
 
 addTab(l.ctrlTT, function()
@@ -158,4 +188,3 @@ end
 calculateSizes()
 window.actionButtons:moveToFront()
 list:getItem(1).onTouch()
-
