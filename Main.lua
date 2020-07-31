@@ -15,14 +15,6 @@ local reactor
 local l = system.getCurrentScriptLocalization()
 local SD = fs.path(system.getCurrentScript())
 
-if component.isAvailable("br_reactor") then
-  reactor = component.get("br_reactor")
-else
-  GUI.alert(l.noReactor)
-  window:remove()
-  menu:remove()
-end
-
 local workspace, window = system.addWindow(GUI.filledWindow(1, 1, 118, 31, 0xE1E1E1))
 
 local menu = workspace:addChild(GUI.menu(1, 1, workspace.width, 0xEEEEEE, 0x666666, 0x3366CC, 0xFFFFFF))
@@ -46,6 +38,14 @@ CtrlM:addItem(l.menuSRS).onTouch = function()
   else
     reactor.setActive(true)
   end
+end
+
+if component.isAvailable("br_reactor") then
+  reactor = component.get("br_reactor")
+else
+  GUI.alert(l.noReactor)
+  window:remove()
+  menu:remove()
 end
 
 window.showDesktopOnMaximize = true
@@ -159,7 +159,6 @@ addTab(l.aboutTT, function()
   addText(l.aboutTY1)
   addText(l.aboutTY2)
 end)
-
 
 -- GUI Actions:
 list.eventHandler = function(workspace, list, e1, e2, e3, e4, e5)
