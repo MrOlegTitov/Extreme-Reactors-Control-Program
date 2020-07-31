@@ -1,5 +1,5 @@
 {
-	greeting = " Welcome, ",
+	greeting = "Welcome, ",
 	noReactor = "This program needs a connected reactor from Extreme Reactors or Big Reactors! Press any key to exit.",
 	helloTT = "Home",
 	infoTT = "Sensor indicators",
@@ -23,9 +23,9 @@
 	ctrlEW = "Extract waste",
 	ctrlRA = "Switch reactor state: ",
 	aboutTT = "About the program",
-	aboutCT = " Creator: MrOlegTitovOffc",
-	aboutPC = " Program version:",
+	aboutCT = "Creator: MrOlegTitovOffc",
+	aboutPC = "Program version:",
 	aboutBT = "Write about errors in: https://github.com/MrOlegTitov/Extreme-Reactors-Control-Program",
-	aboutYT1 = " Thank you for using my program, I hope you were happy and enjoyed it!!!",
-	aboutYT2 = Write about your suggestions and experiences in the reviews.",
+	aboutYT1 = "Thank you for using my program, I hope you were happy and enjoyed it!!!",
+	aboutYT2 = "Write about your suggestions and experiences in the reviews.",
 }
