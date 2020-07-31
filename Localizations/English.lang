@@ -26,6 +26,6 @@
 	aboutCT = "Creator: MrOlegTitovOffc",
 	aboutPV = "Program version:",
 	aboutBT = "Write about errors in: https://github.com/MrOlegTitov/Extreme-Reactors-Control-Program",
-	aboutYT1 = "Thank you for using my program, I hope you were happy and enjoyed it!!!",
-	aboutYT2 = "Write about your suggestions and experiences in the reviews.",
+	aboutTY1 = "Thank you for using my program, I hope you were happy and enjoyed it!!!",
+	aboutTY2 = "Write about your suggestions and experiences in the reviews.",
 }
