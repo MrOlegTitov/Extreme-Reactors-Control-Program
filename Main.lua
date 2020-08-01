@@ -31,7 +31,7 @@ local getCfg = function()
 		2
 	)
 	if result then
-    GUI.alert(cfgSF)
+    GUI.alert(l.cfgSF)
     return downloadedData
 	end
 end
@@ -39,7 +39,7 @@ end
 if fs.exists(cfgPath) == true then
   cfgData = fs.readTable(cfgPath)
 else
-  GUI.alert(cfgLoad)
+  GUI.alert(l.cfgLoad)
   repeat
     tempData = getCfg()
     fs.writeTable(cfgPath, text.deserialize(tempData))
